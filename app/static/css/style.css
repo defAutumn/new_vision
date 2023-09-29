@@ -1,0 +1,160 @@
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 136.7%;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    /* отображаем курсор в виде руки при наведении; некоторые
+    считают, что необходимо оставлять стрелочный вид для кнопок */
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+/*-----------------------------------*/
+
+@font-face {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: Josefin Sans, sans-serif;
+    background-color: white;
+    color: black;
+}
+
+.header__logo {
+    position: relative;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.header__row {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo__link {
+    display: flex;
+    gap: 9px;
+    align-items: flex-end;
+}
+
+.logo__text {
+    color: #33c759;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.menu__list {
+    display: flex;
+    gap: 45px;
+}
+
+.menu__item {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 90px;
+    color: black;
+    transition: 0.5s ease;
+}
+
+.menu__item:hover {
+    color: #34c759;
+}
+
