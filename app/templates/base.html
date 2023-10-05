@@ -20,12 +20,26 @@
           <span></span>
           </div>
           <nav class="header__menu menu">
-          <ul class="menu__list">
-            <li class="menu__item menu__item-active"><a href="#about">Add recipe</a></li>
-            <li class="menu__item"><a href="#">All recipes</a></li>
-            <li class="menu__item"><a href="#">Categories</a></li>
-            <li class="menu__item"><a href="#">LOGIN</a></li>
-          </ul>
+              <ul class="menu__list">
+                {% if request.user.is_authenticated %}
+                    <li class="menu__item menu__item-active"><a href="#about">Add recipe</a></li>
+                    <li class="menu__item"><a href="#">All recipes</a></li>
+                    <li class="menu__item"><a href="#">Categories</a></li>
+                    <li class="menu__item">
+                        <a href="{% url 'profile' %}">
+                            Profile
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="logout" href="{% url 'logout' %}">
+                            Logout
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="menu__item menu_name"><a href="{% url 'login' %}">Log In</a></li>
+                    <li class="menu__item menu_name"><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+              </ul>
           </nav>
         </div>
     </div>

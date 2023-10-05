@@ -106,7 +106,7 @@ h6 {
 
 body {
     font-family: Josefin Sans, sans-serif;
-    background-color: white;
+    background-color: wheat;
     color: black;
 }
 
@@ -158,3 +158,18 @@ body {
     color: #34c759;
 }
 
+.menu_name {
+    font-weight: normal;
+}
+
+.profile {
+    font-color: black;
+}
+
+.logout {
+    font-color: red;
+}
+
+.logout:hover {
+    color: red;
+}
