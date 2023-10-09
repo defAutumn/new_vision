@@ -34,9 +34,10 @@ def register(request):
 def edit(request):
     user = request.user
     if request.method == 'POST':
-        edit_form = EditProfileForm(request.POST, instance=user)
-        if edit_form.is_valid():
-            edit_form.save()
+        form = EditProfileForm(request.POST,request.FILES, instance=user)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.save()
             return redirect('profile')
     else:
         form = EditProfileForm(instance=user)

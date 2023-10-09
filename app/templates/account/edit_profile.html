@@ -3,8 +3,8 @@
 {% block title %}Home page{% endblock %}
 
 {% block content %}
-<div class="container">
-    <form method="POST">
+<div class="container" >
+    <form method="POST" enctype="multipart/form-data">
     {{ form.as_p }}
     {% csrf_token %}
     <p><input type="submit" value="Save"></p>
