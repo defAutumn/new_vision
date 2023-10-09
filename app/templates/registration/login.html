@@ -3,6 +3,7 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
+<div class="container">
     <h1>Log-in</h1>
     <p>Please, use the following form to log-in:</p>
     <form action="{% url 'login' %}" method="post">
@@ -17,4 +18,5 @@
         Forgotten your password?
       </a>
     </p>
+</div>
 {% endblock %}

@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
-from .forms import RegistrationForm
+from .forms import RegistrationForm, EditProfileForm
 
 
 # Create your views here.
@@ -29,3 +29,15 @@ def register(request):
     else:
         user_form = RegistrationForm()
     return render(request, template_name='account/register.html', context={'form': user_form})
+
+
+def edit(request):
+    user = request.user
+    if request.method == 'POST':
+        edit_form = EditProfileForm(request.POST, instance=user)
+        if edit_form.is_valid():
+            edit_form.save()
+            return redirect('profile')
+    else:
+        form = EditProfileForm(instance=user)
+        return render(request=request, template_name='account/edit_profile.html', context={'form': form})

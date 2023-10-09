@@ -1,10 +1,24 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 
 {% block title %}Profile{% endblock %}
 
 {% block content %}
-    <p class="profile">Hello, {{ request.user.first_name|default:request.user.username }}!!!</p>
+<div class="container">
+    <div class="center">
+        <div class="center_inner">
+            <p class="profile">It's your profile!</p>
+            <img src="{% thumbnail request.user.photo 300x0 %}">
+            <p>First name: {{ request.user.first_name }}</p>
+            <p>Last name: {{ request.user.last_name }}</p>
+            <p>Date of birth: {{ request.user.date_of_birth }}</p>
 
+            <p ><a class="logout" href="{% url 'edit' %}">Изменить данные</a></p>
+            <p ><a class="logout" href="{% url 'password_change' %}">Изменить пароль</a></p>
+        </div>
 
-    <p ><a href="{% url 'password_change' %}">Изменить пароль</a></p>
+    </div>
+
+</div>
+
 {% endblock %}

@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # External Packages
+    'easy_thumbnails',
+    # Internal Apps
 ]
 
 MIDDLEWARE = [
@@ -147,3 +150,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 AUTH_USER_MODEL = 'account.CustomUser'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

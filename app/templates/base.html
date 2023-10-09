@@ -25,15 +25,18 @@
                     <li class="menu__item menu__item-active"><a href="#about">Add recipe</a></li>
                     <li class="menu__item"><a href="#">All recipes</a></li>
                     <li class="menu__item"><a href="#">Categories</a></li>
+
                     <li class="menu__item">
-                        <a href="{% url 'profile' %}">
-                            Profile
-                        </a>
-                    </li>
-                    <li class="menu__item">
-                        <a class="logout" href="{% url 'logout' %}">
-                            Logout
-                        </a>
+                        <div class="dropdown">
+                            <a href="{% url 'profile' %}">
+                                Profile
+                            </a>
+                            <div class="dropdown-content">
+                                <a href="{% url 'profile' %}">My profile</a>
+                                <a href="#">My recipes</a>
+                                <a class="logout" href="{% url 'logout' %}">Log out</a>
+                            </div>
+                        </div>
                     </li>
                 {% else %}
                     <li class="menu__item menu_name"><a href="{% url 'login' %}">Log In</a></li>

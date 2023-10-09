@@ -36,3 +36,9 @@ class RegistrationForm(forms.ModelForm):
             raise forms.ValidationError('Password don\'t match')
         else:
             return cd['password2']
+
+
+class EditProfileForm(forms.ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = ['email', 'first_name', 'last_name', 'date_of_birth', 'photo']
